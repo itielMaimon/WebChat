@@ -7,11 +7,29 @@
   max-width: 80%;
 }
 
+.adminMessageBox {
+  background: #f3f3f3;
+  border-radius: 20px;
+  padding: 1px 30px;
+  color: white;
+  display: inline-block;
+  max-width: 80%;
+}
+
 .messageText {
   width: 100%;
   letter-spacing: 0;
   float: left;
   font-size: 1.1em;
+  word-wrap: break-word;
+}
+
+.adminMessageText {
+  width: 100%;
+  margin: 5px;
+  letter-spacing: 0;
+  float: left;
+  font-size: 0.8em;
   word-wrap: break-word;
 }
 
@@ -26,11 +44,19 @@
   margin-top: 3px;
 }
 
+.adminMessageContainer {
+  display: flex;
+  justify-content: center;
+  padding: 0 5%;
+  margin-top: 10px;
+}
+
 .sentText {
   display: flex;
   align-items: center;
   font-family: Helvetica;
   color: #828282;
+  font-size: 12px;
   letter-spacing: 0.3px;
 }
 
@@ -40,6 +66,10 @@
 
 .pr-10 {
   padding-right: 10px;
+}
+
+.mt-0 {
+  margin-top: 0;
 }
 
 .justifyStart {
@@ -56,6 +86,10 @@
 
 .colorDark {
   color: #353535;
+}
+
+.backgroundYellow {
+  background: rgba(255, 245, 196, 0.95);
 }
 
 .backgroundBlue {

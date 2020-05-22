@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { link, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./Join.css";
 
@@ -15,7 +15,7 @@ const Join = () => {
           <input
             type="text"
             className="joinInput"
-            placeholder=""
+            placeholder="Name"
             onChange={(event) => setName(event.target.value)}
           />
         </div>
@@ -23,7 +23,7 @@ const Join = () => {
           <input
             type="text"
             className="joinInput mt-20"
-            placeholder=""
+            placeholder="Group Name"
             onChange={(event) => setRoom(event.target.value)}
           />
         </div>
