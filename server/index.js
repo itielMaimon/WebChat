@@ -24,10 +24,12 @@ io.on("connection", (socket) => {
     socket.emit("message", {
       user: "admin",
       text: `${user.name} welcome to room ${user.room}`,
+      timestamp: Date.now(),
     });
     socket.broadcast.to(user.room).emit("message", {
       user: "admin",
       text: `${user.name} has joined the chat`,
+      timestamp: Date.now(),
     });
 
     socket.join(user.room);
@@ -43,7 +45,11 @@ io.on("connection", (socket) => {
   socket.on("sendMessage", (message, callback) => {
     const user = getUser(socket.id);
 
-    io.to(user.room).emit("message", { user: user.name, text: message });
+    io.to(user.room).emit("message", {
+      user: user.name,
+      text: message,
+      timestamp: Date.now(),
+    });
     io.to(user.room).emit("roomData", {
       room: user.name,
       users: getUsersInRoom(user.room),
@@ -59,6 +65,7 @@ io.on("connection", (socket) => {
       io.to(user.room).emit("message", {
         user: "admin",
         text: `${user.name} has left the chat`,
+        timestamp: Date.now(),
       });
     }
   });

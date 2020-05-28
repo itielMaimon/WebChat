@@ -1,7 +1,7 @@
 .messageBox {
   background: #f3f3f3;
-  border-radius: 20px;
-  padding: 5px 20px;
+  border-radius: 10px;
+  padding: 0 12px;
   color: white;
   display: inline-block;
   max-width: 80%;
@@ -18,9 +18,10 @@
 
 .messageText {
   width: 100%;
+  margin-bottom: 12px;
   letter-spacing: 0;
   float: left;
-  font-size: 1.1em;
+  font-size: 1em;
   word-wrap: break-word;
 }
 
@@ -41,7 +42,7 @@
   display: flex;
   justify-content: flex-end;
   padding: 0 5%;
-  margin-top: 3px;
+  margin-top: 5px;
 }
 
 .adminMessageContainer {
@@ -51,9 +52,18 @@
   margin-top: 10px;
 }
 
-.sentText {
+.fromUserText {
   display: flex;
   align-items: center;
+  font-family: Helvetica;
+  color: #828282;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+}
+
+.timestampText {
+  display: block;
+  text-align: end;
   font-family: Helvetica;
   color: #828282;
   font-size: 12px;

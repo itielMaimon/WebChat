@@ -1,6 +1,6 @@
 .form {
   display: flex;
-  height: 4.5em;
+  width: 100%;
   border-top: 2px solid #d3d3d3;
 }
 
@@ -8,8 +8,8 @@
   border: none;
   border-radius: 0;
   padding: 0 5%;
-  width: 90%;
-  font-size: 1.2em;
+  width: 100%;
+  font-size: 1em;
 }
 
 input:focus,
@@ -24,7 +24,7 @@ select:focus {
   text-decoration: none;
   background: #2979ff;
   padding: 20px;
+  border-radius: 0 0 4px 0;
   display: inline-block;
   border: none;
-  width: 10%;
 }

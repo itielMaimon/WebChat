@@ -2,7 +2,7 @@ import React from "react";
 import ReactEmoji from "react-emoji";
 import "./Message.css";
 
-const Message = ({ message: { user, text }, name }) => {
+const Message = ({ message: { user, text, timestamp }, name }) => {
   let isSentByCurrentUser = false;
 
   const trimedNamed = name.trim().toLowerCase();
@@ -13,6 +13,13 @@ const Message = ({ message: { user, text }, name }) => {
 
   console.log(user);
 
+  function msToTime(milliseconds) {
+    const hours = `0${new Date(milliseconds).getHours()}`.slice(-2);
+    const minutes = `0${new Date(milliseconds).getMinutes()}`.slice(-2);
+
+    return `${hours}:${minutes}`;
+  }
+
   return user === "admin" ? (
     <div className="adminMessageContainer justifyCenter">
       <div className="adminMessageBox backgroundYellow">
@@ -21,16 +28,17 @@ const Message = ({ message: { user, text }, name }) => {
     </div>
   ) : isSentByCurrentUser ? (
     <div className="messageContainer justifyEnd">
-      <p className="sentText pr-10">{trimedNamed}</p>
       <div className="messageBox backgroundBlue">
         <p className="messageText colorWhite">{ReactEmoji.emojify(text)}</p>
+        <p className="timestampText mt-0 colorWhite">{msToTime(timestamp)}</p>
       </div>
     </div>
   ) : (
     <div className="messageContainer justifyStart">
       <div className="messageBox backgroundLight">
-        <p className="sentText pr-10">{user}</p>
+        <p className="fromUserText">{user}</p>
         <p className="messageText colorDark mt-0">{ReactEmoji.emojify(text)}</p>
+        <p className="timestampText mt-0">{msToTime(timestamp)}</p>
       </div>
     </div>
   );

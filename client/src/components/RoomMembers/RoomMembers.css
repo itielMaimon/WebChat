@@ -5,7 +5,7 @@
   color: white;
   height: 95%;
   background-color: #2979ff;
-  border-radius: 4px 0 0 0;
+  border-radius: 4px 0 0 4px;
 }
 
 .activeContainer {
@@ -20,7 +20,7 @@
 }
 
 .activeContainer img {
-  padding-left: 10px;
+  padding: 0 10px;
 }
 
 .textContainer h1 {
