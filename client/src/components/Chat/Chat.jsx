@@ -5,6 +5,7 @@ import InfoBar from "./../InfoBar/InfoBar";
 import Input from "./../Input/Input";
 import Messages from "./../Messages/Messages";
 import RoomMembers from "./../RoomMembers/RoomMembers";
+import Rooms from "../Rooms/Rooms";
 import "./Chat.css";
 
 let socket;
@@ -15,6 +16,7 @@ const Chat = ({ location }) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [users, setUsers] = useState("");
+  const [rooms, setRooms] = useState("");
   const ENDPOINT = "localhost:5000";
   //const ENDPOINT = "https://react-web-chat-app.herokuapp.com/";
 
@@ -43,8 +45,16 @@ const Chat = ({ location }) => {
       setMessages((messages) => [...messages, message]);
     });
 
-    socket.on("roomData", ({ users }) => {
+    socket.on("userData", ({ rooms }) => {
+      setRooms(rooms);
+    });
+
+    socket.on("roomUsersData", ({ users }) => {
       setUsers(users);
+    });
+
+    socket.on("roomMessagesData", ({ messages }) => {
+      setMessages(messages);
     });
   }, []);
 
@@ -58,6 +68,7 @@ const Chat = ({ location }) => {
 
   return (
     <div className="outerContainer">
+      <Rooms rooms={rooms} user={name}></Rooms>
       <RoomMembers users={users} />
       <div className="container">
         <InfoBar room={room} />

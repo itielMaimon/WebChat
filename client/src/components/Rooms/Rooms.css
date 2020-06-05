@@ -1,0 +1,36 @@
+.rooms {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  color: white;
+  height: 95%;
+  background-color: #00173f;
+  border-radius: 4px 0 0 4px;
+}
+
+.button {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #a429a8;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  width: 100%;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.room {
+  background: rgb(197, 198, 255);
+  color: rgb(0, 0, 0);
+  border-radius: 3px;
+  padding: 10px 20px;
+  margin-top: 3px;
+  font-size: 1em;
+  display: inline-block;
+  border: none;
+  width: 100%;
+}
